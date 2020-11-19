@@ -1,11 +1,11 @@
 import * as handlers from './handlers';
-
-let routes = [
+var x = "iop";
+let routes = 
   {
     method: 'GET',
     path: '/loop',
     handler: handlers.loop
   }
-];
+;
 
 export default routes;

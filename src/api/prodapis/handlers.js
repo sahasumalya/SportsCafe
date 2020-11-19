@@ -7,19 +7,21 @@ let adder = (sum, element) => {
 }
 
 
-export let loop = (request, h) => {
+export let loop = async (request, h) => {
   let numbers = [1,2,3,4,5,6,7,8,9,10];
   let sum = 0;
-  
-  numbers.forEach(n => {
-    console.log(`Trying to add ${n}`);
-  	adder(sum, n)
+  console.log(request.info.remoteAddress);
+  for(let i=0; i<numbers.length;i++)
+  {
+    console.log(`Trying to add ${numbers[i]}`);
+    await adder(sum, numbers[i])
   		.then(res => {
-        console.log(`Current sum is ${n}`);
-        sum = res
+        sum = res;
+        console.log(`Current sum is ${sum}`);
       });
-  });
-  
+  }
+
+
   return sum;
 };
 

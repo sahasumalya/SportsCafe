@@ -1,11 +1,11 @@
-import * as handlers from './handlers';
+import  handlers from './handlers';
 
-let routes = [
+let routes = 
   {
     method: 'GET',
     path: '/hello',
-    handler: handlers.hello
+    handler: handlers(20)
   }
-];
+;
 
 export default routes;
